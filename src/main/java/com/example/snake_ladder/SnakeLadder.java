@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,9 @@ public class SnakeLadder extends Application {
 
     public static final int tileSize = 40, height = 10, width = 10;
     int lowerline = tileSize*height+10;
+
+    Players firstPlayer = new Players(tileSize-10, Color.BLACK, "Sonu");
+    Players secondPlayer = new Players(tileSize-20, Color.WHITE, "Monu");
 
     Pane createContent(){
         Pane root = new Pane();
@@ -40,7 +44,9 @@ public class SnakeLadder extends Application {
         playerTwoButton.setTranslateX(327);
         playerTwoButton.setTranslateY(lowerline);
 
-        root.getChildren().addAll(boardimage, playerOneButton,playerTwoButton);
+        root.getChildren().addAll(boardimage, playerOneButton,playerTwoButton,
+                firstPlayer.getCoin(), secondPlayer.getCoin()
+        );
         return root;
     }
 
