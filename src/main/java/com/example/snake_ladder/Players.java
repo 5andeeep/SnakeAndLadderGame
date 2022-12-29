@@ -10,6 +10,8 @@ public class Players {
     private String name;
     private int CoinPosition;
 
+    private static Board gameBoard = new Board();
+
     public Players(int tileSize, Color coinColor, String playerName){
         CoinPosition = 1;
         name = playerName;
